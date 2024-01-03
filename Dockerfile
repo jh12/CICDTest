@@ -3,16 +3,17 @@ USER app
 WORKDIR /app
 EXPOSE 8080
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG TARGETARCH
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 COPY ["src/Api/Api.csproj", "src/Api/"]
-RUN dotnet restore "./src/Api/./Api.csproj"
+RUN dotnet restore -a $TARGETARCH "./src/Api/./Api.csproj"
 
 COPY . .
 WORKDIR "/src/src/Api"
-RUN dotnet build "./Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./Api.csproj" -c $BUILD_CONFIGURATION -a $TARGETARCH -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
