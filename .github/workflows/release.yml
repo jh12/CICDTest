@@ -47,7 +47,7 @@ jobs:
         push: true
         provenance: false
         tags: |
-          octothorp.azurecr.io/CICDTest:${{ steps.gitversion.outputs.NuGetVersionV2 }}
-          octothorp.azurecr.io/CICDTest:${{ steps.gitversion.outputs.Major }}${{ steps.gitversion.outputs.PreReleaseLabelWithDash }}
-          octothorp.azurecr.io/CICDTest:${{ steps.gitversion.outputs.Major }}.${{ steps.gitversion.outputs.Minor }}${{ steps.gitversion.outputs.PreReleaseLabelWithDash }}
+          octothorp.azurecr.io/cicd-test:${{ steps.gitversion.outputs.NuGetVersionV2 }}
+          octothorp.azurecr.io/cicd-test:${{ steps.gitversion.outputs.Major }}${{ steps.gitversion.outputs.PreReleaseLabelWithDash }}
+          octothorp.azurecr.io/cicd-test:${{ steps.gitversion.outputs.Major }}.${{ steps.gitversion.outputs.Minor }}${{ steps.gitversion.outputs.PreReleaseLabelWithDash }}
         build-args: RELEASE_VERSION=${{ steps.gitversion.outputs.NuGetVersionV2 }}
