@@ -1,1 +1,1 @@
-# CICDTest
+Project for testing CI/CD pipeline

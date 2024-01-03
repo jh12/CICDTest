@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Api\Api.csproj", "{17B958EC-8A9E-4641-B958-715FA85FF00E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF21A7D9-95DF-4331-854B-034C7D12FCA7}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{D8360011-737F-40F9-A95D-146E6C42498C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17B958EC-8A9E-4641-B958-715FA85FF00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B958EC-8A9E-4641-B958-715FA85FF00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B958EC-8A9E-4641-B958-715FA85FF00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B958EC-8A9E-4641-B958-715FA85FF00E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8360011-737F-40F9-A95D-146E6C42498C} = {DF21A7D9-95DF-4331-854B-034C7D12FCA7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B090643-194F-4B07-BA43-B5083AF92D24}
+	EndGlobalSection
+EndGlobal
