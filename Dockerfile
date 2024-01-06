@@ -5,6 +5,7 @@ EXPOSE 8080
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG TARGETARCH
+ARG RELEASE_VERSION
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
@@ -17,7 +18,7 @@ RUN dotnet build "./Api.csproj" -c $BUILD_CONFIGURATION -a $TARGETARCH -o /app/b
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false -p:VersionPrefix=$RELEASE_VERSION
 
 FROM base AS final
 WORKDIR /app
